@@ -1,0 +1,525 @@
+/*
+* Prefixed by:
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+@import "./fonts.css";
+@import "./normalize.css";
+@import "./header.css";
+@import "./main.css";
+@import "./footer.css";
+@import "./slider.css";
+@import "./burger-nav.css";
+@import "./adaptive.css";
+
+body.lock {
+    overflow: hidden;
+}
+
+:root {
+    --main-bg-color: #fff7ea;
+    --main-content-color: #e61f4c;
+    --second-content-color: #ffe8c4;
+    --main-font-color: #404040;
+    --ff: "TT Firs Neue";
+    --fw-r: normal;
+    --fw-m: 500;
+    --fw-b: bold;
+    --fw-db: 600;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.wrapper {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+/* Popup */
+
+.popup-wrapper {
+    position: fixed;
+    min-width: 100vw;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(0, 0, 0, 0.8);
+    z-index: 99999;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.show-popup {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-body {
+    max-width: 821px;
+    width: 100%;
+    background: #fff7ea;
+    border: 2px solid #404040;
+    -webkit-box-shadow: 6px 6px 0px #404040;
+    box-shadow: 6px 6px 0px #404040;
+    border-radius: 12px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 40px 100px;
+    position: relative;
+    margin: 0 16px;
+}
+
+.popup-close-cross {
+    position: absolute;
+    content: "";
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    z-index: 999999;
+}
+
+.popup-close-cross-body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.popup-close-cross-body::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: "";
+    width: 32px;
+    border-radius: 5px;
+    height: 3px;
+    background: #404040;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.popup-close-cross-body::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: "";
+    width: 32px;
+    border-radius: 5px;
+    height: 3px;
+    background: #404040;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.popup-close-cross:hover {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.popup-body .logo {
+    max-width: 238px;
+    width: 100%;
+    margin: 0 0 36px 0;
+}
+
+.popup-body .title {
+    font-family: "TT Firs Neue";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 95%;
+    letter-spacing: 0.01em;
+    color: #404040;
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+.popup-body .subtitle {
+    font-family: "TT Firs Neue";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #404040;
+    margin: 0 0 50px 0;
+    text-align: center;
+}
+
+.popup-body form {
+    max-width: 616px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.popup-body form > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.popup-body form > div {
+    margin-bottom: 30px;
+}
+
+.popup-body form > div:nth-child(3) {
+    margin-bottom: 40px;
+}
+
+.input-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.input-item span {
+    font-family: "TT Firs Neue";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #404040;
+    text-align: start;
+}
+
+.input-item input {
+    width: 100%;
+    max-width: 300px;
+    height: 56px;
+    border: none;
+    outline: none;
+    background: #fff7ea;
+    border: 2px solid #404040;
+    border-radius: 8px;
+    text-align: left;
+    padding-left: 10px;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    font-size: 18px;
+}
+
+.input-item input:focus {
+    border: 2px solid #5d74f2;
+}
+
+.input-item input::-webkit-input-placeholder {
+    font-family: "TT Firs Neue";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #404040;
+    opacity: 0.2;
+    text-align: left;
+}
+
+.input-item input::-moz-placeholder {
+    font-family: "TT Firs Neue";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #404040;
+    opacity: 0.2;
+    text-align: left;
+}
+
+.input-item input:-ms-input-placeholder {
+    font-family: "TT Firs Neue";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #404040;
+    opacity: 0.2;
+    text-align: left;
+}
+
+.input-item input::-ms-input-placeholder {
+    font-family: "TT Firs Neue";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #404040;
+    opacity: 0.2;
+    text-align: left;
+}
+
+.input-item input::placeholder {
+    font-family: "TT Firs Neue";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #404040;
+    opacity: 0.6;
+    text-align: left;
+}
+
+.popup-body form button {
+    background: #5d74f2;
+    border-radius: 8px;
+    padding: 24px 32px;
+    font-family: "TT Firs Neue";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #ffffff;
+    max-width: 297px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    transition: all 0.3s;
+}
+
+.popup-body form button:hover {
+    transform: scale(1.05);
+}
+
+.drop-file-area {
+    width: 100%;
+    height: 154px;
+    margin-bottom: 16px;
+    background: #fff7ea;
+    border: 2px dashed #404040;
+    border-radius: 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    gap: 15px;
+}
+
+.file {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.drop-file-area img {
+    width: 50px;
+}
+
+.drop-file-area p {
+    font-family: "TT Firs Neue";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.01em;
+    -webkit-text-decoration-line: underline;
+    text-decoration-line: underline;
+    text-align: center;
+    color: #404040;
+}
+
+.drop-file-area p span {
+    text-decoration: underline;
+}
+
+/* Custom input */
+.custom-select {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: 56px;
+    border: none;
+    outline: none;
+    background: #fff7ea;
+    border: 2px solid #404040;
+    border-radius: 8px;
+    text-align: left;
+    padding-left: 10px;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.custom-select select {
+    display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+    background-color: transparent;
+    color: #817676;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 40%;
+    right: 10px;
+    background-image: url("../assets/images/select-arrow.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 22px;
+    height: 15px;
+    content: "";
+    transition: all 0.3s;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+    top: 40%;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    background-image: url("../assets/images/select-arrow.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 22px;
+    height: 15px;
+    content: "";
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+    padding: 8px 0 8px 10px;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    font-family: "TT Firs Neue";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #404040;
+    opacity: 0.6;
+    text-align: left;
+}
+
+/* Style items (options): */
+.select-items {
+    position: absolute;
+    background-color: #fff7ea;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border: 1px solid #1b1717;
+    border-radius: 10px;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
