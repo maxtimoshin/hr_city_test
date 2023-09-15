@@ -156,6 +156,8 @@ window.addEventListener("load", () => {
 
 // custom select
 
+const cityInput = document.getElementById("ucity");
+
 var x, i, j, l, ll, selElmnt, a, b, c;
 /* Look for any elements with the class "custom-select": */
 x = document.getElementsByClassName("custom-select");
@@ -177,7 +179,7 @@ for (i = 0; i < l; i++) {
     c = document.createElement("DIV");
     c.innerHTML = selElmnt.options[j].innerHTML;
     c.addEventListener("click", function (e) {
-      currentSelectState = e.target.innerText;
+      cityInput.value = e.target.innerText;
       /* When an item is clicked, update the original select box,
         and the selected item: */
       var y, i, k, s, h, sl, yl;

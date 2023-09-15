@@ -6,6 +6,7 @@
 	$surname = $_POST['usurname'];
 	$email= $_POST['uemail'];
 	$phone= $_POST['uphone'];
+	$city= $_POST['ucity'];
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\SMTP;
 	use PHPMailer\PHPMailer\Exception;
@@ -24,9 +25,10 @@
 	if(isset($_FILES['attachFile']) && $_FILES['attachFile']['error'] === UPLOAD_ERR_OK && $_FILES['attachFile']['error'] !== UPLOAD_ERR_NO_FILE) {
 		$mail->AddAttachment($_FILES['attachFile']['tmp_name'], $_FILES['attachFile']['name']);
 	}
-	$mail->Body = "Name: $name<br> Surname: $surname<br> Email: $email<br> Phone: $phone<br>";
+	$mail->Body = "Name: $name<br> Surname: $surname<br> Email: $email<br> Phone: $phone<br> City: $city<br>";
 	$mail->WordWrap = 50; 
-	$mail->addAddress("hr.proficentr@gmail.com");
+	// $mail->addAddress("hr.proficentr@gmail.com");
+	$mail->addAddress("maxtimoshin94@gmail.com");
 	if ($mail->send()) {
 		echo '<script type="text/javascript">
 		window.location.replace("https://hr.profischool.com.ua/#success");
