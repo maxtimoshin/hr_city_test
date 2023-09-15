@@ -27,8 +27,7 @@
 	}
 	$mail->Body = "Name: $name<br> Surname: $surname<br> Email: $email<br> Phone: $phone<br> City: $city<br>";
 	$mail->WordWrap = 50; 
-	// $mail->addAddress("hr.proficentr@gmail.com");
-	$mail->addAddress("maxtimoshin94@gmail.com");
+	$mail->addAddress("hr.proficentr@gmail.com");
 	if ($mail->send()) {
 		echo '<script type="text/javascript">
 		window.location.replace("https://hr.profischool.com.ua/#success");
